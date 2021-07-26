@@ -6,7 +6,7 @@ const {
     series
 } = require('gulp');
 const fileinclude = require('gulp-file-include');
-const scss = require('gulp-sass');
+const scss = require('gulp-sass')(require('sass'));
 const plumber = require('gulp-plumber');
 const concat = require('gulp-concat');
 const browserSync = require('browser-sync');
@@ -125,7 +125,8 @@ function htmlProductInclude() {
 
 function scripts() {
     return src([
-            'node_modules/jquery/dist/jquery.js',
+            // 'node_modules/jquery/dist/jquery.js',
+            // 'node_modules/materialize/dist/js/materialize.min.js',
             'app/js/main.js'
         ])
         .pipe(plumber())
@@ -203,6 +204,7 @@ function build() {
             'app/css/style.min.css',
             'app/fonts/**/*',
             'app/js/main.min.js',
+            'app/js/materialize.min.js',
             'app/*.html'
         ], {
             base: 'app'
@@ -217,8 +219,9 @@ function watching() {
     watch(['app/scss/media.scss'], stylesMedia);
     watch(['app/js/**/*.js', '!app/js/main.min.js'], scripts);
     watch('app/*.html').on('change', browserSync.reload);
-    watch('app/html/product.html').on('change', htmlProductInclude);
     watch('app/html/source.html').on('change', htmlInclude);
+    watch('app/html/*.html').on('change', htmlInclude);
+    watch('app/html/product.html').on('change', htmlProductInclude);
     watch('app/html/catalog.html').on('change', htmlCatalogInclude);
 }
 

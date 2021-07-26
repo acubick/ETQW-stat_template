@@ -1,4 +1,9 @@
 @import "_mixins/font-face";
-
-@include font-face("roboto-example", "../fonts/RobotoRegular/RobotoRegular");
-@include font-face("roboto-example", "../fonts/RobotoBold/RobotoBold", bold);
+@include font-face("HelveticaNeueC", "../fonts/HelveticaNeue/HelveticaNeue Condensed - Regular/HelveticaNeue-CondensedRegular", 400);
+@include font-face("HelveticaNeue", "../fonts/HelveticaNeue/HelveticaNeue-Bold/HelveticaNeue-Bold", bold);
+@include font-face("HelveticaNeueC", "../fonts/HelveticaNeue/HelveticaNeue-CondensedBold/HelveticaNeue-CondensedBold", bold);
+@include font-face("HelveticaNeue", "../fonts/HelveticaNeue/HelveticaNeue-Regular/HelveticaNeue", 400);
+@include font-face("HelveticaNeue", "../fonts/HelveticaNeue/HelveticaNeue-Medium/HelveticaNeue-Medium", 500);
+@include font-face("HelveticaNeue", "../fonts/HelveticaNeue/HelveticaNeue-Light/HelveticaNeue-Light.eot", 300);
+@include font-face("HelveticaNeue", "../fonts/HelveticaNeue/HelveticaNeue-UltraLight/HelveticaNeue-UltraLight", 200);
+@include font-face("HelveticaNeue", "../fonts/HelveticaNeue/HelveticaNeue-Thin/HelveticaNeue-Thin", 100);
