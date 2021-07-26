@@ -1,2 +1,394 @@
-body {
+@import 'vars';
+@import 'outline';
+@import 'fonts';
+body::before {
+    content: '';
+    position: fixed;
+    /* Фиксируем на одном месте */
+    left: 0;
+    right: 0;
+    /* Вся ширин */
+    top: 0;
+    bottom: 0;
+    /* Вся высота */
+    z-index: -1;
+    /* Фон ниже текста */
+    background: top no-repeat url("../images/etqw_background.jpg") rgb(15, 16, 16);
+    background-size: 100% auto;
+    // filter: blur(2px);
 }
+
+td,
+th {
+    padding: 10px 5px;
+}
+
+tr:nth-child(even) {
+    background-color: lighten($background-color-table, 5%)
+}
+
+.padding_075 {
+    padding: 0 0.75rem;
+}
+
+body {
+    font-family: "HelveticaNeue", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.sidenav {
+    background-color: transparent;
+    h4 {
+        color: $color-font;
+        background-color: $background-color-main;
+        margin-bottom: 0;
+    }
+}
+
+.sidenav li {
+    a {
+        color: $color-font;
+        background-color: $background-color-main;
+    }
+}
+
+.info__seerver {
+    color: $color-font;
+    span {
+        margin: 0 20px;
+    }
+}
+
+main {
+    background-color: $background-color-main;
+    padding: 50px 30px;
+    // margin: 0 -1em;
+}
+
+.waves-teal {
+    background-color: $background-color-main;
+    color: $color-font;
+}
+
+.row {
+    margin-bottom: 0;
+}
+
+.row .col {
+    // padding: 0;
+}
+
+.server-block__name {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: $color-font;
+    .name {
+        padding: 0 20px;
+    }
+}
+
+.server-block__header {
+    color: $color-font;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px 0;
+    // margin: 0 auto;
+}
+
+.server-block__info-game {
+    display: flex;
+    flex-direction: column;
+    color: $color-font;
+    font-size: 22px
+}
+
+.address__header,
+.type-game__header,
+.time__header {
+    display: block;
+    width: 35%;
+}
+
+.server-block__address,
+.server-block__type-game {
+    display: flex;
+}
+
+.server-block__info-game.time {
+    display: flex;
+    flex-direction: row;
+    .time__left {
+        font-size: 22px;
+        color: yellowgreen;
+    }
+    .time__text {
+        padding: 0 10px;
+    }
+}
+
+.server-block__info-company {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    .server-block__company-name {
+        display: flex;
+        flex-direction: column;
+        font-size: 22px;
+    }
+}
+
+.server-block__map {
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px;
+    font-size: 18px;
+}
+
+.server-block__map-name {
+    padding: 0 10px;
+    text-align: center;
+}
+
+.server-block__map-name.active {
+    color: green;
+    background-color: rgba(13, 114, 109, 0.459);
+}
+
+.server-block__map-img {
+    img {
+        height: 90px;
+        width: auto;
+    }
+}
+
+
+/*=============================================
+=            Section TABLE block            =
+=============================================*/
+
+.table-game {
+    background-color: $background-color-table;
+    border-radius: 4px;
+}
+
+.team_info_total {
+    display: flex;
+    align-self: center;
+    align-items: center;
+}
+
+.team_info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+}
+
+.score_info {
+    padding: 0 5px;
+    min-width: 65px;
+    text-align: center;
+}
+
+.table-block {
+    margin-bottom: 10px;
+}
+
+.table-header {
+    color: $color-font;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+}
+
+.table-header__views {
+    color: $color-font;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding-left: 20px;
+}
+
+h5.table-header {
+    margin: 0;
+    padding: 0;
+}
+
+.icon.gdf {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    width: 34px;
+    height: 30px;
+    margin-bottom: -5px;
+    margin-right: 10px;
+    img {
+        display: block;
+        position: absolute;
+        left: -56px;
+        top: -4px;
+    }
+}
+
+.icon.strogg {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    width: 54px;
+    height: 30px;
+    margin-bottom: -5px;
+    margin-right: 10px;
+    img {
+        display: block;
+        position: absolute;
+        left: 0;
+        top: -4px;
+    }
+}
+
+.icon.views {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    width: 43px;
+    height: 30px;
+    margin-bottom: -5px;
+    margin-right: 20px;
+    img {
+        display: block;
+        position: absolute;
+        left: -85px;
+        top: -3px;
+    }
+}
+
+.server-block__score {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    align-self: center;
+    font-size: 26px;
+    color: $color-font;
+    min-width: 180px;
+}
+
+.gdf {}
+
+.total-score {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    align-self: center;
+    color: $color-font;
+    font-size: 20px;
+}
+
+.total {
+    display: block;
+    padding: 0 5px;
+}
+
+.total_name {}
+
+.total_kill {}
+
+.total_deaths {}
+
+.serverplayers {}
+
+.tablesorter {}
+
+.table {
+    .trhead {
+        background-color: rgba(14, 92, 148, 0.74);
+        color: $color-font;
+    }
+    .rate {
+        text-align: center;
+    }
+    .player {
+        color: #fff;
+    }
+    .player_rate {
+        text-align: center;
+    }
+}
+
+.table-striped {}
+
+.table-hover {}
+
+.players_table_header {}
+
+.name {}
+
+.header {}
+
+.score {}
+
+.headerSortUp {}
+
+.deaths {}
+
+.kd {}
+
+.ping {}
+
+.bot {}
+
+.xp {}
+
+.rate {}
+
+.average {
+    color: rgba(101, 233, 101, 0.582);
+    background-color: rgba(13, 114, 109, 0.288);
+}
+
+.average_text {}
+
+.average_kill {}
+
+.average_deaths {}
+
+.average_kd {}
+
+.average_ping {}
+
+.average_bot {}
+
+.average_xp {}
+
+.average_rate {
+    text-align: center;
+}
+
+.player_name {}
+
+.player_score {}
+
+.player_deaths {}
+
+.player_kd {}
+
+.player_ping {}
+
+.player_bot {}
+
+.player_xp {}
+
+.player_rate {}
+
+@import "media.scss";
+
+/*=====  End of Section TABLE block  ======*/
